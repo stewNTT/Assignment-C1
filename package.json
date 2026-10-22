@@ -1,0 +1,12 @@
+{
+  "name": "logscope",
+  "version": "0.1.0",
+  "private": true,
+  "type": "commonjs",
+  "bin": {
+    "logscope": "./src/cli.js"
+  },
+  "scripts": {
+    "test": "node --test"
+  }
+}
