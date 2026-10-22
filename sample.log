@@ -1,0 +1,36 @@
+2026-10-01 09:00:12 [INFO] Application started successfully. Server running on port 8080.
+2026-10-01 09:01:45 [INFO] User session initialized for user_id=1024.
+2026-10-01 09:03:01 [WARN] High memory usage detected: 82% allocated.
+2026-10-01 09:04:10 [ERROR] Failed to connect to primary database at 10.0.0.5:5432: Connection timeout
+2026-10-01 09:06:22 [ERROR] Failed to connect to primary database at 10.0.0.5:5432: Connection timeout
+2026-10-01 09:08:00 [INFO] Cache flushed successfully.
+THIS IS A MALFORMED LINE WITH NO TIMESTAMP OR LOG LEVEL
+2026-10-01 09:10:15 [ERROR] Redis cluster unreachable: Connection refused (port 6379)
+2026-10-01 09:12:30 [WARN] Rate limit approaching for client API key: `usr_live_891`
+2026-10-01 09:14:01 [INFO] Scheduled cron task 'invoice_sync' started.
+2026-10-01 09:16:12 [ERROR] PaymentGatewayException: HTTP 500 Internal Server Error from Stripe API
+2026-10-01 09:18:44 [ERROR] PaymentGatewayException: HTTP 500 Internal Server Error from Stripe API
+2026-10-01 09:21:19 [ERROR] PaymentGatewayException: HTTP 500 Internal Server Error from Stripe API
+2026-10-01 09:23:02 [ERROR] Failed to connect to primary database at 10.0.0.5:5432: Connection timeout
+2026-10-01 09:25:55 [INFO] Worker pool scaled down to 4 threads.
+2026-10-01 09:27:11 [ERROR] AuthenticationFailed: Invalid JWT signature for token ID 88921
+2026-10-01 09:29:43 [ERROR] Redis cluster unreachable: Connection refused (port 6379)
+2026-10-01 09:31:05 [WARN] Disk space on /var/log lower than 15% threshold.
+2026-10-01 09:33:30 [ERROR] PaymentGatewayException: HTTP 500 Internal Server Error from Stripe API
+2026-10-01 09:35:18 [ERROR] OutOfMemoryError: Java heap space during PDF rendering job #4412
+2026-10-01 09:37:02 [INFO] Health check endpoint pinged: status OK.
+CORRUPTED_RECORD_INVALID_DATE [ERROR] This line should be counted as malformed.
+2026-10-01 09:39:45 [ERROR] OutOfMemoryError: Java heap space during PDF rendering job #4412
+2026-10-01 09:41:22 [ERROR] PaymentGatewayException: HTTP 500 Internal Server Error from Stripe API
+2026-10-01 09:43:50 [ERROR] OutOfMemoryError: Java heap space during PDF rendering job #4412
+2026-10-01 09:45:04 [ERROR] Failed to connect to primary database at 10.0.0.5:5432: Connection timeout
+2026-10-01 09:47:18 [ERROR] AuthenticationFailed: Invalid JWT signature for token ID 88922
+2026-10-01 09:49:40 [WARN] Slow SQL query detected: SELECT * FROM audit_logs took 4210ms
+2026-10-01 09:51:11 [ERROR] Redis cluster unreachable: Connection refused (port 6379)
+2026-10-01 09:53:33 [ERROR] PaymentGatewayException: HTTP 500 Internal Server Error from Stripe API
+2026-10-01 09:54:01 [ERROR] S3StorageException: Failed to put object `reports/2026-10.pdf`: AccessDenied
+2026-10-01 09:55:44 [ERROR] S3StorageException: Failed to put object `reports/2026-10.pdf`: AccessDenied
+2026-10-01 09:57:15 [ERROR] PaymentGatewayException: HTTP 500 Internal Server Error from Stripe API
+2026-10-01 09:58:00 [INFO] System restart initiated by admin.
+2026-10-01 09:59:20 [ERROR] Failed to connect to primary database at 10.0.0.5:5432: Connection timeout
+2026-10-01 10:00:05 [INFO] Recovery sequence started.
