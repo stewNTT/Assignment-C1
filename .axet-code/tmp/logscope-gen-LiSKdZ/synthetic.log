@@ -1,0 +1,237 @@
+2026-01-01 00:00:00 [INFO] Service started
+2026-01-01 00:00:01 [INFO] Health check passed
+2026-01-01 00:00:02 [INFO] Worker heartbeat
+2026-01-01 00:00:03 [INFO] Request processed
+MALFORMED LINE 4 ### corrupted payload
+2026-01-01 00:00:05 [WARN] Queue depth high
+2026-01-01 00:00:06 [INFO] Worker heartbeat
+2026-01-01 00:00:07 [WARN] High memory usage
+2026-01-01 00:00:08 [INFO] Service started
+2026-01-01 00:00:09 [INFO] Health check passed
+2026-01-01 00:00:10 [WARN] Retry threshold reached
+2026-01-01 00:00:11 [ERROR] Disk full
+2026-01-01 00:00:12 [ERROR] Auth failed
+2026-01-01 00:00:13 [INFO] Health check passed
+2026-01-01 00:00:14 [WARN] Retry threshold reached
+2026-01-01 00:00:15 [INFO] Request processed
+2026-01-01 00:00:16 [WARN] Slow downstream
+2026-01-01 00:00:17 [INFO] Health check passed
+2026-01-01 00:00:18 [INFO] Worker heartbeat
+2026-01-01 00:00:19 [INFO] Request processed
+2026-01-01 00:00:20 [INFO] Service started
+2026-01-01 00:00:21 [WARN] Queue depth high
+2026-01-01 00:00:22 [INFO] Worker heartbeat
+2026-01-01 00:00:23 [INFO] Request processed
+2026-01-01 00:00:24 [INFO] Service started
+2026-01-01 00:00:25 [WARN] Queue depth high
+MALFORMED LINE 26 ### corrupted payload
+2026-01-01 00:00:27 [WARN] High memory usage
+2026-01-01 00:00:28 [ERROR] Network flap
+2026-01-01 00:00:29 [ERROR] Cache miss storm
+2026-01-01 00:00:30 [ERROR] Database timeout
+2026-01-01 00:00:31 [INFO] Request processed
+2026-01-01 00:00:32 [INFO] Service started
+2026-01-01 00:00:33 [INFO] Health check passed
+MALFORMED LINE 34 ### corrupted payload
+2026-01-01 00:00:35 [INFO] Request processed
+2026-01-01 00:00:36 [INFO] Service started
+2026-01-01 00:00:37 [INFO] Health check passed
+2026-01-01 00:00:38 [INFO] Worker heartbeat
+2026-01-01 00:00:39 [INFO] Request processed
+2026-01-01 00:00:40 [INFO] Service started
+2026-01-01 00:00:41 [INFO] Health check passed
+2026-01-01 00:00:42 [INFO] Worker heartbeat
+2026-01-01 00:00:43 [INFO] Request processed
+2026-01-01 00:00:44 [INFO] Service started
+2026-01-01 00:00:45 [INFO] Health check passed
+2026-01-01 00:00:46 [INFO] Worker heartbeat
+2026-01-01 00:00:47 [INFO] Request processed
+2026-01-01 00:00:48 [INFO] Service started
+2026-01-01 00:00:49 [INFO] Health check passed
+2026-01-01 00:00:50 [INFO] Worker heartbeat
+2026-01-01 00:00:51 [INFO] Request processed
+2026-01-01 00:00:52 [ERROR] Auth failed
+2026-01-01 00:00:53 [INFO] Health check passed
+2026-01-01 00:00:54 [WARN] Retry threshold reached
+2026-01-01 00:00:55 [WARN] High memory usage
+2026-01-01 00:00:56 [INFO] Service started
+2026-01-01 00:00:57 [INFO] Health check passed
+2026-01-01 00:00:58 [INFO] Worker heartbeat
+2026-01-01 00:00:59 [INFO] Request processed
+2026-01-01 00:01:00 [INFO] Service started
+2026-01-01 00:01:01 [INFO] Health check passed
+2026-01-01 00:01:02 [INFO] Worker heartbeat
+2026-01-01 00:01:03 [ERROR] Network flap
+2026-01-01 00:01:04 [INFO] Service started
+MALFORMED LINE 65 ### corrupted payload
+2026-01-01 00:01:06 [INFO] Worker heartbeat
+2026-01-01 00:01:07 [INFO] Request processed
+MALFORMED LINE 68 ### corrupted payload
+2026-01-01 00:01:09 [INFO] Health check passed
+2026-01-01 00:01:10 [INFO] Worker heartbeat
+2026-01-01 00:01:11 [WARN] High memory usage
+2026-01-01 00:01:12 [INFO] Service started
+2026-01-01 00:01:13 [INFO] Health check passed
+2026-01-01 00:01:14 [INFO] Worker heartbeat
+2026-01-01 00:01:15 [ERROR] Database timeout
+2026-01-01 00:01:16 [INFO] Service started
+2026-01-01 00:01:17 [ERROR] Auth failed
+2026-01-01 00:01:18 [WARN] Retry threshold reached
+2026-01-01 00:01:19 [WARN] High memory usage
+2026-01-01 00:01:20 [INFO] Service started
+2026-01-01 00:01:21 [WARN] Queue depth high
+2026-01-01 00:01:22 [INFO] Worker heartbeat
+2026-01-01 00:01:23 [INFO] Request processed
+2026-01-01 00:01:24 [INFO] Service started
+MALFORMED LINE 85 ### corrupted payload
+2026-01-01 00:01:26 [ERROR] Disk full
+2026-01-01 00:01:27 [INFO] Request processed
+2026-01-01 00:01:28 [INFO] Service started
+2026-01-01 00:01:29 [WARN] Queue depth high
+2026-01-01 00:01:30 [INFO] Worker heartbeat
+2026-01-01 00:01:31 [INFO] Request processed
+2026-01-01 00:01:32 [INFO] Service started
+2026-01-01 00:01:33 [INFO] Health check passed
+2026-01-01 00:01:34 [INFO] Worker heartbeat
+2026-01-01 00:01:35 [INFO] Request processed
+2026-01-01 00:01:36 [ERROR] Disk full
+2026-01-01 00:01:37 [INFO] Health check passed
+2026-01-01 00:01:38 [INFO] Worker heartbeat
+2026-01-01 00:01:39 [INFO] Request processed
+2026-01-01 00:01:40 [INFO] Service started
+2026-01-01 00:01:41 [ERROR] Disk full
+2026-01-01 00:01:42 [WARN] Retry threshold reached
+2026-01-01 00:01:43 [ERROR] Network flap
+MALFORMED LINE 104 ### corrupted payload
+2026-01-01 00:01:45 [INFO] Health check passed
+2026-01-01 00:01:46 [INFO] Worker heartbeat
+2026-01-01 00:01:47 [WARN] High memory usage
+2026-01-01 00:01:48 [INFO] Service started
+2026-01-01 00:01:49 [WARN] Queue depth high
+2026-01-01 00:01:50 [INFO] Worker heartbeat
+2026-01-01 00:01:51 [INFO] Request processed
+2026-01-01 00:01:52 [INFO] Service started
+2026-01-01 00:01:53 [WARN] Queue depth high
+2026-01-01 00:01:54 [ERROR] Cache miss storm
+2026-01-01 00:01:55 [INFO] Request processed
+2026-01-01 00:01:56 [WARN] Slow downstream
+2026-01-01 00:01:57 [WARN] Queue depth high
+2026-01-01 00:01:58 [INFO] Worker heartbeat
+2026-01-01 00:01:59 [WARN] High memory usage
+2026-01-01 00:02:00 [INFO] Service started
+2026-01-01 00:02:01 [WARN] Queue depth high
+2026-01-01 00:02:02 [INFO] Worker heartbeat
+2026-01-01 00:02:03 [WARN] High memory usage
+2026-01-01 00:02:04 [INFO] Service started
+2026-01-01 00:02:05 [INFO] Health check passed
+2026-01-01 00:02:06 [INFO] Worker heartbeat
+2026-01-01 00:02:07 [INFO] Request processed
+2026-01-01 00:02:08 [INFO] Service started
+2026-01-01 00:02:09 [INFO] Health check passed
+2026-01-01 00:02:10 [INFO] Worker heartbeat
+2026-01-01 00:02:11 [WARN] High memory usage
+2026-01-01 00:02:12 [INFO] Service started
+2026-01-01 00:02:13 [INFO] Health check passed
+2026-01-01 00:02:14 [INFO] Worker heartbeat
+2026-01-01 00:02:15 [INFO] Request processed
+2026-01-01 00:02:16 [INFO] Service started
+2026-01-01 00:02:17 [ERROR] Auth failed
+2026-01-01 00:02:18 [WARN] Retry threshold reached
+2026-01-01 00:02:19 [INFO] Request processed
+2026-01-01 00:02:20 [INFO] Service started
+2026-01-01 00:02:21 [INFO] Health check passed
+2026-01-01 00:02:22 [INFO] Worker heartbeat
+2026-01-01 00:02:23 [INFO] Request processed
+2026-01-01 00:02:24 [WARN] Slow downstream
+2026-01-01 00:02:25 [INFO] Health check passed
+2026-01-01 00:02:26 [INFO] Worker heartbeat
+2026-01-01 00:02:27 [INFO] Request processed
+2026-01-01 00:02:28 [INFO] Service started
+2026-01-01 00:02:29 [INFO] Health check passed
+2026-01-01 00:02:30 [INFO] Worker heartbeat
+2026-01-01 00:02:31 [INFO] Request processed
+2026-01-01 00:02:32 [ERROR] Auth failed
+MALFORMED LINE 153 ### corrupted payload
+2026-01-01 00:02:34 [INFO] Worker heartbeat
+2026-01-01 00:02:35 [INFO] Request processed
+2026-01-01 00:02:36 [ERROR] Disk full
+2026-01-01 00:02:37 [WARN] Queue depth high
+2026-01-01 00:02:38 [INFO] Worker heartbeat
+2026-01-01 00:02:39 [INFO] Request processed
+2026-01-01 00:02:40 [INFO] Service started
+2026-01-01 00:02:41 [WARN] Queue depth high
+2026-01-01 00:02:42 [INFO] Worker heartbeat
+2026-01-01 00:02:43 [INFO] Request processed
+2026-01-01 00:02:44 [INFO] Service started
+2026-01-01 00:02:45 [ERROR] Database timeout
+2026-01-01 00:02:46 [INFO] Worker heartbeat
+2026-01-01 00:02:47 [INFO] Request processed
+2026-01-01 00:02:48 [WARN] Slow downstream
+2026-01-01 00:02:49 [WARN] Queue depth high
+2026-01-01 00:02:50 [ERROR] Database timeout
+2026-01-01 00:02:51 [INFO] Request processed
+2026-01-01 00:02:52 [INFO] Service started
+2026-01-01 00:02:53 [INFO] Health check passed
+2026-01-01 00:02:54 [INFO] Worker heartbeat
+2026-01-01 00:02:55 [INFO] Request processed
+2026-01-01 00:02:56 [INFO] Service started
+2026-01-01 00:02:57 [INFO] Health check passed
+2026-01-01 00:02:58 [WARN] Retry threshold reached
+2026-01-01 00:02:59 [INFO] Request processed
+2026-01-01 00:03:00 [ERROR] Database timeout
+2026-01-01 00:03:01 [INFO] Health check passed
+2026-01-01 00:03:02 [INFO] Worker heartbeat
+2026-01-01 00:03:03 [INFO] Request processed
+2026-01-01 00:03:04 [WARN] Slow downstream
+2026-01-01 00:03:05 [INFO] Health check passed
+2026-01-01 00:03:06 [WARN] Retry threshold reached
+2026-01-01 00:03:07 [INFO] Request processed
+2026-01-01 00:03:08 [INFO] Service started
+2026-01-01 00:03:09 [INFO] Health check passed
+2026-01-01 00:03:10 [WARN] Retry threshold reached
+2026-01-01 00:03:11 [WARN] High memory usage
+2026-01-01 00:03:12 [INFO] Service started
+2026-01-01 00:03:13 [INFO] Health check passed
+2026-01-01 00:03:14 [ERROR] Cache miss storm
+2026-01-01 00:03:15 [WARN] High memory usage
+2026-01-01 00:03:16 [INFO] Service started
+2026-01-01 00:03:17 [INFO] Health check passed
+2026-01-01 00:03:18 [INFO] Worker heartbeat
+2026-01-01 00:03:19 [INFO] Request processed
+2026-01-01 00:03:20 [WARN] Slow downstream
+2026-01-01 00:03:21 [INFO] Health check passed
+2026-01-01 00:03:22 [INFO] Worker heartbeat
+2026-01-01 00:03:23 [INFO] Request processed
+2026-01-01 00:03:24 [INFO] Service started
+2026-01-01 00:03:25 [INFO] Health check passed
+2026-01-01 00:03:26 [ERROR] Disk full
+2026-01-01 00:03:27 [ERROR] Auth failed
+2026-01-01 00:03:28 [INFO] Service started
+2026-01-01 00:03:29 [INFO] Health check passed
+2026-01-01 00:03:30 [INFO] Worker heartbeat
+2026-01-01 00:03:31 [INFO] Request processed
+2026-01-01 00:03:32 [INFO] Service started
+2026-01-01 00:03:33 [WARN] Queue depth high
+2026-01-01 00:03:34 [INFO] Worker heartbeat
+2026-01-01 00:03:35 [INFO] Request processed
+2026-01-01 00:03:36 [INFO] Service started
+2026-01-01 00:03:37 [INFO] Health check passed
+MALFORMED LINE 218 ### corrupted payload
+2026-01-01 00:03:39 [INFO] Request processed
+2026-01-01 00:03:40 [WARN] Slow downstream
+2026-01-01 00:03:41 [INFO] Health check passed
+2026-01-01 00:03:42 [WARN] Retry threshold reached
+2026-01-01 00:03:43 [INFO] Request processed
+2026-01-01 00:03:44 [INFO] Service started
+2026-01-01 00:03:45 [ERROR] Database timeout
+2026-01-01 00:03:46 [INFO] Worker heartbeat
+2026-01-01 00:03:47 [INFO] Request processed
+2026-01-01 00:03:48 [INFO] Service started
+2026-01-01 00:03:49 [INFO] Health check passed
+2026-01-01 00:03:50 [INFO] Worker heartbeat
+2026-01-01 00:03:51 [INFO] Request processed
+2026-01-01 00:03:52 [INFO] Service started
+2026-01-01 00:03:53 [INFO] Health check passed
+2026-01-01 00:03:54 [INFO] Worker heartbeat
+2026-01-01 00:03:55 [INFO] Request processed
+2026-01-01 00:03:56 [ERROR] Disk full
