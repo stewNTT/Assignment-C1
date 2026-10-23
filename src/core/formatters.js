@@ -116,6 +116,62 @@ function writeMarkdownReport(outputDir, commandName, markdown, now = new Date())
   return filePath;
 }
 
+function renderOutput(commandName, data, format, outputDir = process.cwd()) {
+  if (format === 'json') {
+    return {
+      destination: 'stdout',
+      content: formatJson(data),
+    };
+  }
+
+  if (format === 'md') {
+    let markdown;
+
+    if (commandName === 'summary') {
+      markdown = formatSummaryMarkdown(data);
+    } else if (commandName === 'timeline') {
+      markdown = formatTimelineMarkdown(data);
+    } else if (commandName === 'grep') {
+      markdown = formatGrepMarkdown(data);
+    } else {
+      throw new Error(`Unsupported command format: ${commandName}`);
+    }
+
+    return {
+      destination: 'file',
+      filePath: writeMarkdownReport(outputDir, commandName, markdown),
+      content: markdown,
+    };
+  }
+
+  if (format == null || format === 'text') {
+    if (commandName === 'summary') {
+      return {
+        destination: 'stdout',
+        content: formatSummaryText(data),
+      };
+    }
+
+    if (commandName === 'timeline') {
+      return {
+        destination: 'stdout',
+        content: formatTimelineText(data),
+      };
+    }
+
+    if (commandName === 'grep') {
+      return {
+        destination: 'stdout',
+        content: formatGrepText(data),
+      };
+    }
+
+    throw new Error(`Unsupported command format: ${commandName}`);
+  }
+
+  throw new Error(`Unsupported output format: ${format}`);
+}
+
 module.exports = {
   formatGrepMarkdown,
   formatGrepText,
@@ -125,5 +181,6 @@ module.exports = {
   formatTimelineMarkdown,
   formatTimelineText,
   getReportFileName,
+  renderOutput,
   writeMarkdownReport,
 };

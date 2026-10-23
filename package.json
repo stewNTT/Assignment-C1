@@ -7,6 +7,7 @@
     "logscope": "./src/cli.js"
   },
   "scripts": {
-    "test": "node --test"
+    "test": "node --test",
+    "gen:log": "node scripts/gen_log.js"
   }
 }
