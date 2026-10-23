@@ -1,0 +1,5 @@
+2026-10-22 10:10:00 [INFO] Boot
+2026-10-22 10:15:00 [ERROR] Timeout
+2026-10-22 10:20:00 [ERROR] Disk full
+2026-10-22 10:25:00 [WARN] Slow downstream
+oops
