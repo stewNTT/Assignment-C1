@@ -1,0 +1,129 @@
+const fs = require('node:fs');
+const path = require('node:path');
+
+function formatSummaryText(summary) {
+  const topErrors = summary.topErrors.length === 0
+    ? 'none'
+    : summary.topErrors.map((item, index) => `${index + 1}. ${item.message} (${item.count})`).join('\n');
+
+  return [
+    'Summary',
+    `INFO: ${summary.levels.INFO}`,
+    `WARN: ${summary.levels.WARN}`,
+    `ERROR: ${summary.levels.ERROR}`,
+    `First timestamp: ${summary.firstTimestamp || 'n/a'}`,
+    `Last timestamp: ${summary.lastTimestamp || 'n/a'}`,
+    `Malformed lines: ${summary.malformedLines}`,
+    'Top 5 ERROR messages:',
+    topErrors,
+  ].join('\n');
+}
+
+function formatTimelineText(timeline) {
+  return [
+    `Timeline bucket: ${timeline.bucket}`,
+    `Malformed lines: ${timeline.malformedLines}`,
+    timeline.chart,
+  ].join('\n');
+}
+
+function formatGrepText(result) {
+  return result.matches.join('\n');
+}
+
+function formatJson(data) {
+  return JSON.stringify(data, null, 2);
+}
+
+function formatSummaryMarkdown(summary) {
+  const topErrors = summary.topErrors.length === 0
+    ? '- None'
+    : summary.topErrors.map((item) => `- ${item.message}: ${item.count}`).join('\n');
+
+  return [
+    '# logscope summary report',
+    '',
+    '## Level counts',
+    '',
+    `- INFO: ${summary.levels.INFO}`,
+    `- WARN: ${summary.levels.WARN}`,
+    `- ERROR: ${summary.levels.ERROR}`,
+    '',
+    '## Range',
+    '',
+    `- First timestamp: ${summary.firstTimestamp || 'n/a'}`,
+    `- Last timestamp: ${summary.lastTimestamp || 'n/a'}`,
+    `- Malformed lines: ${summary.malformedLines}`,
+    '',
+    '## Top 5 ERROR messages',
+    '',
+    topErrors,
+  ].join('\n');
+}
+
+function formatTimelineMarkdown(timeline) {
+  const rows = timeline.points.length === 0
+    ? '| None | 0 |'
+    : timeline.points.map((point) => `| ${point.label} | ${point.count} |`).join('\n');
+
+  return [
+    '# logscope timeline report',
+    '',
+    `- Bucket: ${timeline.bucket}`,
+    `- Malformed lines: ${timeline.malformedLines}`,
+    '',
+    '## Buckets',
+    '',
+    '| Bucket | Error count |',
+    '| --- | ---: |',
+    rows,
+    '',
+    '## ASCII chart',
+    '',
+    '```text',
+    timeline.chart,
+    '```',
+  ].join('\n');
+}
+
+function formatGrepMarkdown(result) {
+  const lines = result.matches.length === 0
+    ? '_No matches found._'
+    : ['```text', ...result.matches, '```'].join('\n');
+
+  return [
+    '# logscope grep report',
+    '',
+    `- Level filter: ${result.filters.level || 'none'}`,
+    `- Since filter: ${result.filters.since || 'none'}`,
+    `- Malformed lines: ${result.malformedLines}`,
+    '',
+    '## Matches',
+    '',
+    lines,
+  ].join('\n');
+}
+
+function getReportFileName(commandName, now = new Date()) {
+  const safeStamp = now.toISOString().replace(/[:]/g, '-').replace(/\..+$/, '');
+  return `logscope-${commandName}-${safeStamp}.md`;
+}
+
+function writeMarkdownReport(outputDir, commandName, markdown, now = new Date()) {
+  const fileName = getReportFileName(commandName, now);
+  const filePath = path.join(outputDir, fileName);
+  fs.writeFileSync(filePath, markdown, 'utf8');
+  return filePath;
+}
+
+module.exports = {
+  formatGrepMarkdown,
+  formatGrepText,
+  formatJson,
+  formatSummaryMarkdown,
+  formatSummaryText,
+  formatTimelineMarkdown,
+  formatTimelineText,
+  getReportFileName,
+  writeMarkdownReport,
+};

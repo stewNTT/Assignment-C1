@@ -1,0 +1,5 @@
+2026-10-22 09:00:00 [INFO] Boot
+bad line
+2026-10-22 09:05:00 [ERROR] Timeout
+2026-10-22 09:06:00 [ERROR] Timeout
+2026-10-22 09:07:00 [WARN] Slow downstream
