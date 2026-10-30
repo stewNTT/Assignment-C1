@@ -20,6 +20,16 @@ test('parseCliArgs parses summary command options', () => {
   });
 });
 
+test('parseCliArgs parses explain command options', () => {
+  const parsed = parseCliArgs(['node', 'cli.js', 'explain', 'sample.log', '--format', 'md']);
+
+  assert.deepEqual(parsed, {
+    command: 'explain',
+    file: 'sample.log',
+    format: 'md',
+  });
+});
+
 test('renderOutput writes markdown reports when requested', () => {
   const tempDir = fs.mkdtempSync(path.join(os.tmpdir(), 'logscope-cli-report-'));
   const result = renderOutput('summary', {
@@ -85,4 +95,26 @@ test('cli grep command supports json output', () => {
   assert.equal(result.status, 0);
   const payload = JSON.parse(result.stdout);
   assert.deepEqual(payload.matches, ['2026-10-22 10:20:00 [ERROR] Disk full']);
+});
+
+test('cli explain command reports endpoint failures cleanly', () => {
+  const tempDir = fs.mkdtempSync(path.join(os.tmpdir(), 'logscope-cli-explain-'));
+  const logPath = path.join(tempDir, 'sample.log');
+  fs.writeFileSync(logPath, [
+    '2026-10-22 10:10:00 [INFO] Boot',
+    '2026-10-22 10:20:00 [ERROR] Disk full',
+    '2026-10-22 10:21:00 [ERROR] Disk full',
+  ].join('\n'), 'utf8');
+
+  const result = spawnSync(process.execPath, [cliPath, 'explain', logPath, '--format', 'json'], {
+    encoding: 'utf8',
+    env: {
+      ...process.env,
+      LOGSCOPE_LLM_ENDPOINT: 'https://example.test/explain',
+      LOGSCOPE_LLM_MODEL: 'demo-model',
+    },
+  });
+
+  assert.equal(result.status, 1);
+  assert.match(result.stderr, /fetch failed|getaddrinfo|ENOTFOUND|timed out/i);
 });

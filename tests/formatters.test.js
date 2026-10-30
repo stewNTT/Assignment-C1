@@ -5,6 +5,8 @@ const os = require('node:os');
 const path = require('node:path');
 
 const {
+  formatExplainMarkdown,
+  formatExplainText,
   formatGrepMarkdown,
   formatGrepText,
   formatJson,
@@ -67,6 +69,20 @@ test('formatGrepText joins matched lines', () => {
   ].join('\n'));
 });
 
+test('formatExplainText renders explanation details', () => {
+  assert.equal(formatExplainText({
+    endpoint: 'https://example.test/explain',
+    model: 'demo-model',
+    explanation: 'Likely database saturation.',
+  }), [
+    'Explain',
+    'Endpoint: https://example.test/explain',
+    'Model: demo-model',
+    '',
+    'Likely database saturation.',
+  ].join('\n'));
+});
+
 test('formatJson renders structured json', () => {
   assert.equal(formatJson({ ok: true }), '{\n  "ok": true\n}');
 });
@@ -90,6 +106,18 @@ test('markdown formatters render report content', () => {
     malformedLines: 1,
     matches: ['2026-10-22 10:15:00 [ERROR] Timeout'],
   });
+  const explainMarkdown = formatExplainMarkdown({
+    endpoint: 'https://example.test/explain',
+    model: 'demo-model',
+    explanation: 'Likely database saturation.',
+    summary: {
+      levels: { INFO: 1, WARN: 0, ERROR: 1 },
+      firstTimestamp: null,
+      lastTimestamp: null,
+      malformedLines: 2,
+      topErrors: [{ message: 'Timeout', count: 1 }],
+    },
+  });
 
   assert.match(summaryMarkdown, /# logscope summary report/);
   assert.match(summaryMarkdown, /- Timeout: 1/);
@@ -97,6 +125,8 @@ test('markdown formatters render report content', () => {
   assert.match(timelineMarkdown, /\| 2026-10-22 10:00 \(30m\) \| 2 \|/);
   assert.match(grepMarkdown, /# logscope grep report/);
   assert.match(grepMarkdown, /2026-10-22 10:15:00 \[ERROR\] Timeout/);
+  assert.match(explainMarkdown, /# logscope explain report/);
+  assert.match(explainMarkdown, /Likely database saturation\./);
 });
 
 test('writeMarkdownReport writes report file to disk', () => {

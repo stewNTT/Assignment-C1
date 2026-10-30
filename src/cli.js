@@ -5,6 +5,7 @@ const path = require('node:path');
 const { summarizeFile } = require('./core/summary');
 const { buildTimeline } = require('./core/timeline');
 const { grepFile } = require('./core/grep');
+const { explainFile } = require('./core/explain');
 const { renderOutput } = require('./core/formatters');
 
 function printHelp() {
@@ -15,6 +16,7 @@ function printHelp() {
     '  summary <file>                      Summarize log levels and errors',
     '  timeline <file> --bucket <value>    Show error counts by time bucket',
     '  grep <file> [--level LEVEL] [--since "YYYY-MM-DD HH:mm:ss"]',
+    '  explain <file>                      Summarize probable root cause via LLM',
     '',
     'Global options:',
     '  --format <json|md>',
@@ -95,6 +97,13 @@ async function runCommand(options) {
         level: options.level,
         since: options.since,
       }),
+    };
+  }
+
+  if (options.command === 'explain') {
+    return {
+      commandName: 'explain',
+      data: await explainFile(filePath),
     };
   }
 

@@ -1,0 +1,4 @@
+
+# ignore large tmp logs
+/tmp/100mb.log
+tmp/*.log

@@ -31,6 +31,16 @@ function formatGrepText(result) {
   return result.matches.join('\n');
 }
 
+function formatExplainText(result) {
+  return [
+    'Explain',
+    `Endpoint: ${result.endpoint}`,
+    `Model: ${result.model || 'n/a'}`,
+    '',
+    result.explanation,
+  ].join('\n');
+}
+
 function formatJson(data) {
   return JSON.stringify(data, null, 2);
 }
@@ -104,6 +114,36 @@ function formatGrepMarkdown(result) {
   ].join('\n');
 }
 
+function formatExplainMarkdown(result) {
+  const topErrors = result.summary.topErrors.length === 0
+    ? '- None'
+    : result.summary.topErrors.map((item) => `- ${item.message}: ${item.count}`).join('\n');
+
+  return [
+    '# logscope explain report',
+    '',
+    `- Endpoint: ${result.endpoint}`,
+    `- Model: ${result.model || 'n/a'}`,
+    '',
+    '## Probable root cause',
+    '',
+    result.explanation,
+    '',
+    '## Source summary',
+    '',
+    `- INFO: ${result.summary.levels.INFO}`,
+    `- WARN: ${result.summary.levels.WARN}`,
+    `- ERROR: ${result.summary.levels.ERROR}`,
+    `- First timestamp: ${result.summary.firstTimestamp || 'n/a'}`,
+    `- Last timestamp: ${result.summary.lastTimestamp || 'n/a'}`,
+    `- Malformed lines: ${result.summary.malformedLines}`,
+    '',
+    '## Top 5 ERROR messages',
+    '',
+    topErrors,
+  ].join('\n');
+}
+
 function getReportFileName(commandName, now = new Date()) {
   const safeStamp = now.toISOString().replace(/[:]/g, '-').replace(/\..+$/, '');
   return `logscope-${commandName}-${safeStamp}.md`;
@@ -133,6 +173,8 @@ function renderOutput(commandName, data, format, outputDir = process.cwd()) {
       markdown = formatTimelineMarkdown(data);
     } else if (commandName === 'grep') {
       markdown = formatGrepMarkdown(data);
+    } else if (commandName === 'explain') {
+      markdown = formatExplainMarkdown(data);
     } else {
       throw new Error(`Unsupported command format: ${commandName}`);
     }
@@ -166,6 +208,13 @@ function renderOutput(commandName, data, format, outputDir = process.cwd()) {
       };
     }
 
+    if (commandName === 'explain') {
+      return {
+        destination: 'stdout',
+        content: formatExplainText(data),
+      };
+    }
+
     throw new Error(`Unsupported command format: ${commandName}`);
   }
 
@@ -173,6 +222,8 @@ function renderOutput(commandName, data, format, outputDir = process.cwd()) {
 }
 
 module.exports = {
+  formatExplainMarkdown,
+  formatExplainText,
   formatGrepMarkdown,
   formatGrepText,
   formatJson,
