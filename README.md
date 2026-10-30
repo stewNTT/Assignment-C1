@@ -76,6 +76,34 @@ logscope grep <file> [--level <LEVEL>] [--since "YYYY-MM-DD HH:mm:ss"]
 ```
 Prints matching original log lines.
 
+### Explain
+```bash
+logscope explain <file>
+```
+Sends the summary/top errors to an LLM endpoint and prints a probable root-cause summary.
+
+Before using `explain`, set these environment variables in your terminal session:
+
+```bash
+set LOGSCOPE_LLM_ENDPOINT=https://api.anthropic.com/v1/messages
+set LOGSCOPE_LLM_MODEL=claude-sonnet-4-5
+set LOGSCOPE_LLM_API_KEY=your_api_key_here
+set LOGSCOPE_LLM_MAX_TOKENS=2000
+```
+
+Notes:
+- `LOGSCOPE_LLM_ENDPOINT` is required.
+- `LOGSCOPE_LLM_MODEL` is required by most providers.
+- `LOGSCOPE_LLM_API_KEY` is required for authenticated endpoints.
+- `LOGSCOPE_LLM_MAX_TOKENS` is optional; default is `2000`.
+- `LOGSCOPE_LLM_TIMEOUT_MS` is optional; default is `10000`.
+
+Example:
+
+```bash
+logscope explain sample.log --format json
+```
+
 ## Output formats
 All commands support:
 
